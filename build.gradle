@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'io.ratpack.ratpack-java'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "io.ratpack:ratpack-gradle:${ratpackVersion}"
+    }
+}
+
+
+allprojects {
+    group 'table-report'
+    version '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'io.ratpack.ratpack-java'
+
+    mainClassName = 'com.bazinga.report.app.Main'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        compile ratpack.dependency("guice")
+        testCompile group: 'junit', name: 'junit', version: '4.+'
+    }
+}
